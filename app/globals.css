@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355 100% 100%;
+    --secondary: 140 30% 96%;
+    --secondary-foreground: 142 76% 10%;
+    --muted: 140 10% 96%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 140 30% 96%;
+    --accent-foreground: 142 76% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142 76% 36%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14% 4%;
+    --foreground: 0 0% 98%;
+    --card: 20 14% 4%;
+    --card-foreground: 0 0% 98%;
+    --popover: 20 14% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 70% 50%;
+    --primary-foreground: 144 70% 10%;
+    --secondary: 142 30% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 142 30% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 142 30% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 142 30% 15%;
+    --input: 142 30% 15%;
+    --ring: 142 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+/* Animated background elements */
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    hsl(var(--primary) / 0.05),
+    hsl(var(--primary) / 0.1),
+    hsl(var(--primary) / 0.05),
+    transparent
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.animated-blob {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: blob 15s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes blob {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
+  }
+  50% {
+    border-radius: 70% 30% 50% 50% / 40% 60% 40% 60%;
+  }
+  75% {
+    border-radius: 30% 70% 60% 40% / 50% 50% 70% 30%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-slower {
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Particle animation */
+@keyframes particle-animation {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -100px, 0);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: hsl(var(--primary) / 0.3);
+  animation: particle-animation 15s infinite linear;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end);
+}
