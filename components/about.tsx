@@ -161,7 +161,7 @@ export default function About() {
               className="p-3 rounded-lg bg-card/80 backdrop-blur-sm border border-border hover:border-primary/50 transition-all duration-300"
             >
               <h4 className="font-medium text-primary">Email</h4>
-              <p className="text-muted-foreground">karwasrasahil11@gmail.com</p>
+              <p className="text-muted-foreground">sahilkarwasra11@gmail.com</p>
             </motion.div>
             <motion.div 
               variants={{

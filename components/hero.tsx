@@ -90,7 +90,7 @@ export default function Hero() {
               <Linkedin className="h-5 w-5 text-primary" />
             </motion.a>
             <motion.a
-              href="https://instagram.com/sahilkarwasra"
+              href="https://instagram.com/karwasra_sahil11"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
